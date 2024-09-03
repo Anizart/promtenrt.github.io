@@ -1,0 +1,1 @@
+*{font-family:"Roboto",sans-serif}nav{height:50px;background-color:#212121}nav .menu{padding:13px 70px;margin:0;list-style:none}nav .menu__item{padding-right:28px;border-right-style:dashed !important}nav .menu__item:last-child{border:none !important;padding-right:0}nav .menu__link{color:#fff;font-size:15px;font-weight:300}nav .menu__link:hover{color:#1eacc7}
