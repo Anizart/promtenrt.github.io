@@ -1,0 +1,20 @@
+
+i.icon {
+    width: 1em;
+    height: 1em;
+    background: none;
+    background-color: currentColor;
+    display: inline-block;
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    vertical-align: middle;
+    &.icon-email {
+        mask-image: url(../img/svg/mail.svg);
+    }
+    &.icon-tel {
+        mask-image: url(../img/svg/tel.svg);
+    }
+    &.icon-arrow {
+        mask-image: url(../img/svg/arrow.svg);
+    }
+}
