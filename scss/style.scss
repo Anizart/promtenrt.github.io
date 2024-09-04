@@ -90,7 +90,6 @@ h4, h5, h6 {
 .cards {
     &__card {
         min-height: 293px;
-        height: 100%;
         background: linear-gradient(316deg, #0575e6 1.31%, #021b79 100%);
     }
 }
@@ -161,6 +160,7 @@ h4, h5, h6 {
 
 .first {
     &__main-item {
+        position: relative;
         overflow: hidden;
     }
     &__wrapper {
@@ -186,13 +186,19 @@ h4, h5, h6 {
             left: 0;
         }
     }
+    &__img {
+        object-fit: cover; 
+    }
     &__offer {
         padding-left: 15px;
     }
     &__image-wrapper {
-        object-fit: cover;
-        position: relative;
+        position: absolute;
         z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
     &__image-inner-wrapper:after {
         content: '';
