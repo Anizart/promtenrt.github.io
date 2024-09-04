@@ -40,6 +40,9 @@ h4, h5, h6 {
 //+ btn:
 
 .button {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     background-color: $accent-color;
     color: $white-color;
     border: none;
@@ -88,9 +91,18 @@ h4, h5, h6 {
 
 //+ cads:
 .cards {
+    .row {
+        gap: 40px;
+    }
     &__card {
+        color: $white-color;
+        border-radius: 20px;
         min-height: 293px;
         background: linear-gradient(316deg, #0575e6 1.31%, #021b79 100%);
+        &:nth-child(2),
+        &:nth-child(3) {
+            background: #26272E;
+        }
     }
 }
 
@@ -165,7 +177,7 @@ h4, h5, h6 {
     &__wrapper {
         margin-top: 150px;
         padding-bottom: 21px;
-        // position: absolute;
+        position: absolute;
         transform: translateX(-50%);
         top: 0;
         left: 50%;
@@ -189,6 +201,7 @@ h4, h5, h6 {
         object-fit: cover; 
     }
     &__offer {
+        margin-bottom: 57px;
         padding-left: 15px;
     }
     &__image-wrapper {
@@ -209,6 +222,31 @@ h4, h5, h6 {
         font-size: 54px;
         -webkit-text-stroke: .5px #fff;
         line-height: 1.4;
+    }
+    &__subheading {
+        color: $white-color;
+        font-weight: $fw-5;
+        font-size: 50px;
+        line-height: 1.4;
+        margin-bottom: 50px;
+    }
+    .button {
+        padding: 20px 34px;
+        img {
+            height: 26px;
+            width: 26px;
+        }  
+    }
+    .button:last-child {
+        background-color: #26272E;
+        border: 2px solid $accent-color;
+        padding: 20px 58px;
+        &:hover {
+            background-color: #2e2f3b;
+        }
+    }
+    &__btns {
+        gap: 30px;
     }
 }
 
