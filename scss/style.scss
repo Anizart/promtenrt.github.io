@@ -160,13 +160,12 @@ h4, h5, h6 {
 
 .first {
     &__main-item {
-        position: relative;
         overflow: hidden;
     }
     &__wrapper {
         margin-top: 150px;
         padding-bottom: 21px;
-        position: absolute;
+        // position: absolute;
         transform: translateX(-50%);
         top: 0;
         left: 50%;
@@ -193,12 +192,8 @@ h4, h5, h6 {
         padding-left: 15px;
     }
     &__image-wrapper {
-        position: absolute;
+        position: relative;
         z-index: -1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
     }
     &__image-inner-wrapper:after {
         content: '';
