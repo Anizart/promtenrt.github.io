@@ -1,3 +1,4 @@
+//+ sliders:
 $(document).ready(function(){
     const slider = $("#slider").owlCarousel({
         loop: true,
@@ -5,6 +6,15 @@ $(document).ready(function(){
         nav: false,
         items: 1,
     });
+});
+
+$(document).ready(function(){
+  const sliderTwo = $("#slider-2").owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: false,
+      items: 4,
+  });
 });
 
 $(window).scroll(() =>{
