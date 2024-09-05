@@ -166,15 +166,68 @@ a:hover {
 }
 
 //+ product-card:
+.product-card {
+    min-height: 390px;
+    height: 100%;
+    width: 328px;
+    flex-direction: column;
+    border-radius: 20px;
+    background: #fff;
+    margin-right: 20px;
+    padding: 30px 20px;
+    // &:last-child {
+    //     margin: 0;
+    // }
+    &__promotion {
+        border-radius: 20px;
+        background: linear-gradient(316deg, #0575e6 1.31%, #021b79 100%);
+        padding: 5px 35px;
+    }
+    &__more {
+        font-size: 14px;
+        line-height: 1.7;
+        color: #ccc;
+        &:after {
+            content: '';
+            display: inline-block;
+            height: 15px;
+            width: 30px;
+            background: url("data:image/svg+xml,%3Csvg width='31' height='16' viewBox='0 0 31 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30.7071 8.70711C31.0976 8.31658 31.0976 7.68342 30.7071 7.29289L24.3431 0.928932C23.9526 0.538408 23.3195 0.538408 22.9289 0.928932C22.5384 1.31946 22.5384 1.95262 22.9289 2.34315L28.5858 8L22.9289 13.6569C22.5384 14.0474 22.5384 14.6805 22.9289 15.0711C23.3195 15.4616 23.9526 15.4616 24.3431 15.0711L30.7071 8.70711ZM0 9H30V7H0V9Z' fill='url(%23paint0_linear_92_80)' /%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_92_80' x1='-7' y1='6.99999' x2='28.5' y2='8.00002' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23032A8B' /%3E%3Cstop offset='1' stop-color='%231472DF' /%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") center /cover no-repeat;
+            transform: translateY(28%);
+            margin-left: 8px;
+        }
+    }
+    &__image-wrapper {
+        height: 214px;
+        max-width: 326px;
+    }
+    &__img {
+        height: inherit;
+        width: inherit;
+        object-fit: cover;
+    }
+}
 
 //+ sections:
 .section {
     padding: 120px 0;
 }
 .gradient {
-    background: linear-gradient(314deg, #181a16 0%, #021c7a 71.12%, #0555bf 100%);
-    transform: rotate(-180deg);
+    position: relative;
+    &:after {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(314deg, #181a16 0%, #021c7a 71.12%, #0555bf 100%);
+        transform: rotate(-180deg);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
 }
+
 
 //+ header:
 .bg-blure {
@@ -245,7 +298,7 @@ a:hover {
 }
 
 //+ main:
-
+//+ first:
 .first {
     min-height: 900px;
     height: 100%;
@@ -352,10 +405,9 @@ a:hover {
     }
 }
 
+//+ promotion:
 .promotion {
-    .promotion__wrapper {
-        transform: rotate(-180deg);
-    }
+
 }
 
 @media (min-width: 1200px) {
