@@ -9,10 +9,14 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  const sliderTwo = $("#slider-2").owlCarousel({
+  const sliderTwo = $("#sliderTwo").owlCarousel({
       loop: true,
       margin: 0,
-      nav: false,
+      nav: true,
+      navText: [
+        '',
+        ''
+      ],
       items: 4,
   });
 });
