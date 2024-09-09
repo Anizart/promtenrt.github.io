@@ -9,7 +9,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  const sliderTwo = $("#sliderTwo").owlCarousel({
+  const promotionSlider = $("#promotionSlider").owlCarousel({
       loop: true,
       margin: 0,
       nav: true,
