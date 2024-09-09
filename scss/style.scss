@@ -8,7 +8,7 @@ $fw-5: 500;
     display: inline-block;
     height: 3px;
     width: 46px;
-    transform: translateY(-50%);
+    transform: translateY(-80%);
     border-radius: 20px;
     background: linear-gradient(316deg, #0575e6 1.31%, #021b79 100%);
     box-shadow: 0px 0px 10px $accent-color;
@@ -87,10 +87,8 @@ a:hover {
     padding-left: 70px;
     margin-bottom: 60px;
     position: relative;
-
     &:before {
         @include before;
-        transform: translateY(-50);
     }
 }
 
@@ -173,7 +171,7 @@ a:hover {
         color: $light-color;
         font-weight: 700;
         font-size: 50px;
-                &:after {
+        &:after {
             content: '';
             height: 2px;
             width: 90px;
@@ -527,23 +525,44 @@ a:hover {
         flex-direction: column;
         justify-content: space-between;
     }
+    &__wrap {
+        position: relative;
+    }
+    &__text-up {
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 1.8px;
+        padding: 0 4px;
+        font-size: 14px;
+        transition: all .15s ease-out;
+    }
     &__input {
         color: $light-color;
         background: transparent;
         border: none;
         border-bottom: 1px solid #ececec;
+        position: absolute;
+        top: 0;
+        left: 0;
         &:focus, &:target{
-                background: none;
-                border: 0 ;
-                outline: 0;
-                border-bottom: 1px solid #ececec;
-            }
+            background: none;
+            border: 0 ;
+            outline: 0;
+            border-bottom: 1px solid #ececec;
+        }
+    }
+    .questions__input:focus + .questions__text-up {
+        top: -20px;
+        left: 8px;
+    }
+    .questions__input:not(:placeholder-shown).questions__input:not(:focus) + .questions__text-up {
+        top: -20px;
+        left: 8px;
     }
     &__btn {
         max-width: 200px;
         padding: 16px 57px;
-    }
-    &__checkbox-wrapper {
     }
     &__checkbox {
         opacity: 0;
