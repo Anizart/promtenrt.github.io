@@ -8,11 +8,14 @@ $fw-5: 500;
     display: inline-block;
     height: 3px;
     width: 46px;
-    transform: translateY(-150%);
+    transform: translateY(-50%);
     border-radius: 20px;
     background: linear-gradient(316deg, #0575e6 1.31%, #021b79 100%);
     box-shadow: 0px 0px 10px $accent-color;
     margin-right: 10px;
+    position: absolute;
+    top: 50%;
+    left: 0;
 }
 @mixin text {
     font-size: 14px;
@@ -30,6 +33,12 @@ $fw-5: 500;
     &:hover {
         text-decoration: none !important;
     }
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 h1, h2, h3,
@@ -63,9 +72,25 @@ a:hover {
     font-weight: $fw-5;
     font-size: 18px;
     line-height: 1.4;
+    padding-left: 70px;
     margin-bottom: 27px;
+    position: relative;
     &:before {
         @include before;
+    }
+}
+.heading-big {
+    color: $light-color;
+    font-weight: $fw-5;
+    font-size: 36px;
+    line-height: 1.4;
+    padding-left: 70px;
+    margin-bottom: 60px;
+    position: relative;
+
+    &:before {
+        @include before;
+        transform: translateY(-50);
     }
 }
 
@@ -184,6 +209,7 @@ a:hover {
         font-size: 14px;
         line-height: 1.7;
         color: #ccc;
+        transition: .5s;
         &:after {
             content: '';
             display: inline-block;
@@ -198,27 +224,15 @@ a:hover {
         height: 214px;
         max-width: 326px;
     }
-    &__img {
-        height: inherit;
-        width: inherit;
-        object-fit: cover;
-    }
     &__description {
         color: #181a16;
         font-weight: 500;
         font-size: 16px;
         line-height: 1.4;
         padding-top: 18px;
-        &:after {
-            content: '';
-            height: 1px;
-            width: 100%;
-            display: block;
-            margin: 11px 0;
-            border-radius: 20px;
-            background: #d9d9d9;
-            opacity: 0.4;
-        }
+        border-bottom: 1px solid rgb(217, 217, 217);
+        padding-bottom: 11px;
+        margin-bottom: 11px;
     }
     &__price {
         gap: 20px;
@@ -230,7 +244,7 @@ a:hover {
     }
     &__discount {
         color: #ccc;
-        text-decoration: line-through;
+        text-decoration: line-through !important; //+ Т.к. я у всех ссылок изначально сбросил...
         font-weight: 400;
         font-size: 20px;
         line-height: 1;
@@ -444,16 +458,151 @@ a:hover {
         height: 64px;
         width: 21px;
         position: absolute;
+        transform: translateY(-50%);
         top: 50%;
         z-index: 8;
     }
     .owl-prev {
-        background: url(/img/svg/arrow-left.svg) center center /cover no-repeat;
+        background: url(../img/svg/arrow-left.svg) center center /cover no-repeat;
         left: -45px;
     }
     .owl-next {
-        background: url(/img/svg/arrow-right.svg) center center /cover no-repeat;
+        background: url(../img/svg/arrow-right.svg) center center /cover no-repeat;
         right: -34px;
+    }
+}
+
+//+ questions:
+.questions {
+    padding: 100px 0;
+    position: relative;
+    &__image-wrapper {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        &:after {
+            content: '';
+            height: 100%;
+            width: 100%;
+            display: block;
+            background: linear-gradient(126deg, rgba(6, 59, 162, 0.8) 0%, rgba(25, 27, 23, 0.8) 100%);
+            transform: rotate(-180deg);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    &__data-wrapper {
+        background: #181a16;
+        border-radius: 20px;
+        padding: 80px 60px;
+    }
+    .heading-big {
+        margin-bottom: 30px;
+    }
+    &__text {
+        max-width: 521px;
+        color: $light-color;
+        font-size: 20px;
+        line-height: 1.5;
+    }
+    &__form {
+        height: 100%;
+        max-width: 600px;
+        justify-content: space-between;
+    }
+    &__text-up {
+        color: $light-color;
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    &__inner-wrapper {
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__input {
+        color: $light-color;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #ececec;
+        &:focus, &:target{
+                background: none;
+                border: 0 ;
+                outline: 0;
+                border-bottom: 1px solid #ececec;
+            }
+    }
+    &__btn {
+        max-width: 200px;
+        padding: 16px 57px;
+    }
+    &__checkbox-wrapper {
+    }
+    &__checkbox {
+        opacity: 0;
+        height: 0;
+        width: 0;
+        & + label {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+        }
+        & + label:before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            flex-grow: 0;
+            border: 1px solid #9e9e9e;
+            background: #e0dfdf;
+            cursor: pointer;
+            margin-right: 16px;
+        }
+        &:checked {
+            background-color: #000;
+            position: relative;
+            &+label:before {
+                border-color: #0b76ef;
+                background-color: #0b76ef;
+            }
+            &+label:after{
+                width: 40px;
+                height: 40px;
+                background-color: #000;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        &:not(:disabled):not(:checked) + label:hover:before {
+            border: 1.5px solid #0077ff;
+        }
+        &:not(:disabled):active + label:before {
+            background-color: #1100ac;
+        }
+        &:focus + label:before {
+            box-shadow: 0 0 5px rgb(255, 255, 255);
+        }
+        &:focus:not(:checked) + label:before {
+            border-color: #80bdff;
+          }
+          /* стили для чекбокса, находящегося в состоянии disabled */
+        &:disabled + label:before {
+            background-color: #e9ecef;
+        }
+    }
+    &__checkbox-text {
+        color: #9e9e9e;
+        font-size: 14px;
+        line-height: 1.5;
     }
 }
 
