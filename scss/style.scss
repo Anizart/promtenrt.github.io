@@ -143,9 +143,9 @@ a:hover {
         }
         &:nth-child(3):after {
             content: '';
-            display: block;
-            width: 320px;
             height: 293px;
+            width: 320px;
+            display: block;
             background: linear-gradient(316deg, #0575e6 1.31%, #021b79 100%);
             border-radius: 20px;
             position: absolute;
@@ -185,6 +185,45 @@ a:hover {
         color: #d9d9d9;
         font-weight: 400;
         font-size: 18px;
+    }
+}
+.anime {
+    animation-fill-mode: forwards;
+    animation-direction:unset;
+    height: 293px;
+    width: 320px;
+    display: block;
+    font-size: 16px;
+    background: linear-gradient(316deg, #0575e6 1.31%, #021b79 100%);
+    border-radius: 20px;
+    position: absolute;
+    top: -100%;
+    left: 15px;
+    z-index: 0;
+}
+@keyframes cube-0 {
+    0% {
+        top: -100%;
+    }
+    50% {
+        top: 10%;
+    }
+    100% {
+        background: #26272E;
+        top: 453px;
+        left: 60px;
+    }
+}
+@keyframes cube-1 {
+    0% {
+        top: -100%;
+    }
+    50% {
+        top: 10%;
+    }
+    100% {
+        top: 453px;
+        left: 445px;
     }
 }
 
@@ -284,7 +323,9 @@ a:hover {
     z-index: 100;
     top: 0;
     &__logo {
-        margin-right: 23px;
+        height: 98px;
+        width: 209px;
+        object-fit: cover;
     }
     &__top {
         margin-bottom: 16px;
@@ -292,11 +333,15 @@ a:hover {
     &__search {
         height: 40px;
         width: 100%;
+        background: transparent;
         border: 1px solid rgba(217, 217, 217, 0.4);
         border-radius: 40px;
         padding: 10px 20px;
         @include text;
         color: $stroke;
+        &::placeholder {
+            color: inherit;
+        }
     }
     &__contact {
         justify-content: end;
@@ -356,6 +401,7 @@ a:hover {
     }
     .container {
         height: inherit;
+        position: relative;
     }
     &__inner-wrapper {
         height: inherit;
@@ -568,6 +614,7 @@ a:hover {
         opacity: 0;
         height: 0;
         width: 0;
+        position: relative;
         & + label {
             display: inline-flex;
             align-items: center;
@@ -589,31 +636,24 @@ a:hover {
             background-color: #000;
             position: relative;
             &+label:before {
-                border-color: #0b76ef;
-                background-color: #0b76ef;
-            }
-            &+label:after{
-                width: 40px;
-                height: 40px;
-                background-color: #000;
-                position: absolute;
-                top: 0;
-                left: 0;
+                content: "";
+                background: url(../img/svg/check.svg) center no-repeat;
+                border-color: $accent-color;
+                background-color: $accent-color;
             }
         }
         &:not(:disabled):not(:checked) + label:hover:before {
-            border: 1.5px solid #0077ff;
+            border: 1.5px solid $accent-color;
         }
         &:not(:disabled):active + label:before {
-            background-color: #1100ac;
+            background-color: $accent-color;
         }
         &:focus + label:before {
             box-shadow: 0 0 5px rgb(255, 255, 255);
         }
         &:focus:not(:checked) + label:before {
-            border-color: #80bdff;
+            border-color: $accent-color;
           }
-          /* стили для чекбокса, находящегося в состоянии disabled */
         &:disabled + label:before {
             background-color: #e9ecef;
         }
