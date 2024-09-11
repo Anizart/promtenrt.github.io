@@ -21,6 +21,7 @@ $(document).ready(function(){
   });
 });
 
+//+ header:
 $(window).scroll(() =>{
     const scrollTop = (document).documentElement.scrollTop;
 
@@ -44,6 +45,8 @@ $(window).scroll(() =>{
 //     }
 // });
 
+//+ number change:
+
 const btn = $('.button-first'),
       btnAnime = $('[data-anime]'),
       cards = $('.cards__card'),
@@ -61,7 +64,22 @@ function changeNumber() {
 
 btn.on('click', changeNumber);
 
+// const btn = document.querySelector('.button-first'),
+//       cards = document.querySelectorAll('.cards__card'),
+//       number = cards[1].querySelector('.cards__number');      
 
+// let i = 2;
+// function changeNumber() {
+//   number.innerHTML = `0${++i}`;
+
+//   if (i == 5) {
+//     btn.removeEventListener('click', changeNumber);
+//   }
+// }
+
+// btn.addEventListener('click', changeNumber);
+
+//+ animation:
 
 const div = document.createElement('div');
 document.querySelector('.first .container').prepend(div);
@@ -97,19 +115,3 @@ card.forEach((element, i) => {
   }
 
 });
-
-// const btn = document.querySelector('.button-first'),
-//       cards = document.querySelectorAll('.cards__card'),
-//       number = cards[1].querySelector('.cards__number');      
-
-// let i = 2;
-// function changeNumber() {
-//   number.innerHTML = `0${++i}`;
-
-//   if (i == 5) {
-//     btn.removeEventListener('click', changeNumber);
-//   }
-// }
-
-// btn.addEventListener('click', changeNumber);
-
