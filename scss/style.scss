@@ -36,7 +36,7 @@ $fw-5: 500;
 }
 
 .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
-    padding: 10px 0 10px;
+    padding: 0px 10px;
 }
 
 img {
@@ -240,7 +240,7 @@ a:hover {
     border-radius: 20px;
     background: #fff;
     padding: 30px 20px;
-    position: relative;
+    // position: relative;
     &:hover {
         min-height: calc(390px + 22px);
         transition: .5s;
@@ -255,7 +255,7 @@ a:hover {
         color: $light-color;
         background: #012bbf;
         border-radius: 40px;
-        transition: .8s;
+        transition: 1.5s;
         position: absolute;
         bottom: -22px;
         transform: translateX(-50%);
@@ -263,10 +263,11 @@ a:hover {
     }
     &:hover > &__btm {
         opacity: 1;
+        transition: .7s;
         &:hover {
             border: 1.5px solid #012bbf;
             background-color: #ffffff;
-            transition: 1s;
+            transition: .8s;
         }
     }
     &__promotion {
@@ -529,7 +530,10 @@ a:hover {
 .promotion {
     min-height: 804px;
     height: 100%;
-    .owl-carousel {
+    &__wrapper{
+        position: relative;
+    }
+    .owl-carousel { // Он скрыл кнопки
         padding-bottom: 40px;
         overflow: hidden;
     }
@@ -701,6 +705,45 @@ a:hover {
         color: #9e9e9e;
         font-size: 14px;
         line-height: 1.5;
+    }
+}
+
+//+ work:
+.work {
+    background: linear-gradient(314deg, #181a16 0%, #021c7a 71.12%, #0555bf 100%);
+    padding: 88px 0 120px;
+    &__wrapper {
+        display: grid;
+        gap: 18px 20px;
+        grid-template: 273px 268px / repeat(4, 1fr);
+        padding-bottom: 60px;
+    }
+    &__imege-wrapper {
+        border-radius: 20px;
+        background-color: #EAE2DF;
+        &:first-child {
+            grid-row: 1 / 3;
+        }
+        &:nth-child(2) {
+            grid-column: 2 / 4;
+        }
+        &:nth-child(3) {
+            grid-column: 4;
+            grid-row: 1 / 3;
+        }
+    }
+    &__img {
+        border-radius: inherit;
+        object-fit: cover;
+    }
+    &__text {
+        color: $stroke;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    &__text + &__text {
+        margin-top: 30px;
     }
 }
 
