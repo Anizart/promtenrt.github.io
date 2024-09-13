@@ -12,13 +12,24 @@ $(document).ready(function(){
   const promotionSlider = $("#promotionSlider").owlCarousel({
       loop: true,
       margin: 0,
-      nav: true,
+      nav: false,
       navText: [
         '',
         ''
       ],
       items: 4,
   });
+});
+
+//+ nav:
+const owl = $('#promotionSlider');
+
+$('.promotion__nav-prev').click(function() {
+  owl.trigger('prev.owl.carousel', [580]);
+});
+
+$('.promotion__nav-next').click(function() {
+  owl.trigger('next.owl.carousel', [580]);
 });
 
 //+ header:
