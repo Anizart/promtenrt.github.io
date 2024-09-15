@@ -33,6 +33,7 @@ $('.promotion__nav-next').click(function() {
 });
 
 //+ header:
+//+ header-scroll:
 $(window).scroll(() =>{
     const scrollTop = (document).documentElement.scrollTop;
 
@@ -55,6 +56,19 @@ $(window).scroll(() =>{
 //       header.classList.remove('bg-blure');
 //     }
 // });
+
+//+ header-burger:
+const burger = document.querySelector('.header__burger-wrapper'),
+      adaptive = document.querySelector('.header__adaptive'),
+      body = document.querySelector('body'),
+      burgerLins = burger.querySelector('.header__burger');
+
+burger.addEventListener('click', () => {
+  burger.classList.toggle('blur');
+  burgerLins.classList.toggle('active');
+  adaptive.classList.toggle('appearance');
+  body.classList.toggle('hide');
+});
 
 //+ number change:
 
