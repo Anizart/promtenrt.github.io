@@ -194,6 +194,60 @@ a:hover {
         font-size: 18px;
     }
 }
+@media (max-width: 1199px) {
+    .cards {
+        &__card {
+            min-height: 150px;
+            &:nth-child(3):after {
+                content: '';
+                height: 220px;
+                width: 220px;
+                display: block;
+                background: linear-gradient(316deg, #0575e6 1.31%, #021b79 100%);
+                border-radius: 20px;
+                position: absolute;
+                left: 47px;
+                bottom: -32px;
+                z-index: -1;
+            }
+        }
+        &__wrapper {
+            padding: 70px 63px 15px 20px;
+        }
+        &__number {
+            font-weight: 600;
+            font-size: 70px;
+        }
+        &__data {
+            font-size: 35px;
+        }
+        &__text {
+            font-size: 14px;
+        }
+    }
+}
+@media (max-width: 992px) {
+    .cards {
+        &__card:nth-child(3):after {
+            content: '';
+            display: none;
+        }
+    }
+}
+@media (max-width: 767px) {
+
+}
+@media (max-width: 575px) {
+    .cards__card {
+        &:nth-child(2),
+        &:nth-child(3) {
+            &:before {
+                content: '';
+                display: none;
+            }
+        }
+    }
+}
 .anime {
     animation-fill-mode: forwards;
     animation-direction:unset;
@@ -243,7 +297,6 @@ a:hover {
     border-radius: 20px;
     background: #fff;
     padding: 30px 20px;
-    // position: relative;
     &:hover {
         min-height: calc(390px + 22px);
         transition: .5s;
@@ -321,6 +374,142 @@ a:hover {
         font-weight: 400;
         font-size: 20px;
         line-height: 1;
+    }
+}
+@media (max-width: 1390px) {
+    .product-card {
+        min-height: 250px;
+        width: 300px;
+        padding: 25px 10px;
+        &__btm {
+            height: 50px;
+            width: 180px;
+        }
+        &__promotion {
+            padding: 5px 35px;
+        }
+        &__link {
+            font-size: 14px;
+        }
+        &__image-wrapper {
+            height: 214px;
+            max-width: 326px;
+        }
+        &__description {
+            font-size: 14px;
+            line-height: 1.4;
+            padding-top: 18px;
+            padding-bottom: 11px;
+            margin-bottom: 11px;
+        }
+        &__price {
+            font-size: 21px;
+        }
+        &__discount {
+            font-size: 16px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .product-card {
+        min-height: 200px;
+        width: 250px;
+        padding: 25px 10px;
+        &__btm {
+            height: 50px;
+            width: 180px;
+        }
+        &__promotion {
+            padding: 2px 20px;
+        }
+        &__link {
+            font-size: 14px;
+        }
+        &__image-wrapper {
+            height: 200px;
+            max-width: 314px;
+        }
+        &__description {
+            font-size: 14px;
+            line-height: 1.4;
+            padding-top: 18px;
+            padding-bottom: 11px;
+            margin-bottom: 11px;
+        }
+        &__price {
+            font-size: 21px;
+        }
+        &__discount {
+            font-size: 16px;
+        }
+    }
+}
+@media (max-width: 575px) {
+    .product-card {
+        min-height: 250px;
+        width: 300px;
+        padding: 25px 10px;
+        &__btm {
+            height: 50px;
+            width: 180px;
+        }
+        &__promotion {
+            padding: 5px 35px;
+        }
+        &__link {
+            font-size: 14px;
+        }
+        &__image-wrapper {
+            height: 214px;
+            max-width: 326px;
+        }
+        &__description {
+            font-size: 14px;
+            line-height: 1.4;
+            padding-top: 18px;
+            padding-bottom: 11px;
+            margin-bottom: 11px;
+        }
+        &__price {
+            font-size: 21px;
+        }
+        &__discount {
+            font-size: 16px;
+        }
+    }
+}
+@media (max-width: 360px) {
+    .product-card {
+        min-height: 200px;
+        width: 250px;
+        padding: 25px 10px;
+        &__btm {
+            height: 50px;
+            width: 180px;
+        }
+        &__promotion {
+            padding: 2px 20px;
+        }
+        &__link {
+            font-size: 14px;
+        }
+        &__image-wrapper {
+            height: 200px;
+            max-width: 314px;
+        }
+        &__description {
+            font-size: 14px;
+            line-height: 1.4;
+            padding-top: 18px;
+            padding-bottom: 11px;
+            margin-bottom: 11px;
+        }
+        &__price {
+            font-size: 21px;
+        }
+        &__discount {
+            font-size: 16px;
+        }
     }
 }
 
@@ -412,14 +601,20 @@ a:hover {
         padding: 16px 36px;
     }
     &__link {
+        white-space: nowrap;
         color: inherit;
     }
     a:hover {
         text-decoration: underline !important;
     }
 }
-
-@media (max-width: 1439px) {
+@media (max-width: 1249px) {
+    .header__nav {
+        overflow: auto;
+        max-width: 700px;
+    }
+}
+@media (max-width: 1199px) {
     .header {
         padding: 0;
         &__burger-wrapper {
@@ -432,11 +627,14 @@ a:hover {
             right: 40px;
             z-index: 100;
         }
+        .button-header {
+            display: none;
+        }
         &__burger {
             height: 1px;
             width: 38px;
             background-color: #fff;
-            transition: .8s;
+            transition: .7s;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -474,7 +672,7 @@ a:hover {
         }
         &__burger.active {
             background-color: transparent;
-            transition: .8s;
+            transition: .7s;
         }
         &__burger.active:after {
             top: 50%;
@@ -483,11 +681,13 @@ a:hover {
         }
         &__adaptive {
             height: 100vh;
-            width: 40%;
+            width: 38%;
+            display: flex;
+            flex-direction: column;
             overflow: auto;
             background-color: #383636;
             padding: 100px 40px 50px 20px;
-            transition: 1.8s;
+            transition: 1s;
             position: absolute;
             top: 0;
             right: -100%;
@@ -503,7 +703,6 @@ a:hover {
         }
         &__top .row {
             width: 100%;
-            max-width: 70% !important;
             flex-direction: column;
             align-items: end !important;
             gap: 28px;
@@ -512,24 +711,29 @@ a:hover {
             width: 100%;
             max-width: 100%;
         }
+        &__del {
+            display: none;
+        }
         &__contact {
             flex-direction: column;
             text-align: right;
             gap: 28px;
-            margin-bottom: 40px;
         }
         &__bottom {
+            order: -1;
             flex-direction: column;
             gap: 50px;
             align-items: end;
+            margin-bottom: 40px;
         }
         &__menu {
             flex-direction: column;
-            gap: 25px;
+            gap: 45px;
             text-align: right;
         }
-        &__item {
-            padding: 18px 0;
+        &__link {
+            width: 100%;
+            padding: 18px 0 18px 50px;
         }
     }
     .button-header {
@@ -549,10 +753,6 @@ a:hover {
             max-width: 100% !important;
         }
     }
-    .button-header {
-        width: 100%;
-        justify-content: center;
-    }
 }
 @media (max-width: 610px) {
     .header {
@@ -561,10 +761,13 @@ a:hover {
         }
     }
 }
-@media (max-width: 470px) {
+@media (max-width: 483px) {
     .header {
         &__adaptive {
             width: 100%;
+        }
+        &__burger-wrapper {
+            right: 15px;
         }
     }
     .header * {
@@ -637,14 +840,14 @@ a:hover {
     &__h1 {
         color: rgba($light-color, 10%);
         font-weight: 600;
-        font-size: 54px;
+        font-size: clamp(30px, 3vw, 54px);
         -webkit-text-stroke: .5px $light-color;
         line-height: 1.4;
     }
     &__subheading {
         color: $light-color;
         font-weight: $fw-5;
-        font-size: 50px;
+        font-size: clamp(20px, 2.5vw, 50px);
         line-height: 1.4;
         margin-bottom: 50px;
     }
@@ -680,6 +883,31 @@ a:hover {
         height: inherit;
     }
 }
+@media (max-width: 1199px) {
+    .first__wrapper {
+        padding-top: 100px;
+    }
+}
+@media (max-width: 767px) {
+    .first {
+        &__inner-wrapper {
+            border-right: none;
+            padding: 30px 0 30px;
+            &:after {
+            content: '';
+                display: none;
+            }
+        }
+    }
+}
+@media (max-width: 531px) {
+    .first {
+        .button {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+}
 
 //+ promotion:
 .promotion {
@@ -710,6 +938,23 @@ a:hover {
     &__nav-next {
         transform: rotate(180deg);
         right: -34px;
+    }
+}
+@media (max-width: 1549px) {
+    .promotion {
+        &__nav-prev {
+            background-color: #0000005e;
+            backdrop-filter: blur(4px);
+            left: 10px;
+            z-index: 10;
+        }
+        &__nav-next {
+            background-color: #0000005e;
+            backdrop-filter: blur(4px);
+            transform: rotate(180deg);
+            right: 10px;
+            z-index: 10;
+        }
     }
 }
 
@@ -1030,6 +1275,6 @@ a:hover {
 
 @media (min-width: 1200px) {
     .container {
-        min-width: 1400px;
+        max-width: 1400px;
     }
 }
