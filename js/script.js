@@ -11,13 +11,37 @@ $(document).ready(function(){
 $(document).ready(function(){
   const promotionSlider = $("#promotionSlider").owlCarousel({
       loop: true,
-      margin: 0,
+      margin: 10,
+      autoplay:false,
       nav: false,
       navText: [
         '',
         ''
       ],
-      items: 4,
+      responsive: {
+        0:{
+          items:1,
+          center: true,
+        },
+        576:{
+          items:2,
+          center: true,
+        },
+        768:{
+          items:2,
+          center: true,
+        },
+        992:{
+          items:3,
+          center: true,
+        },
+        1200:{
+          items:3,
+        },
+        1400:{
+          items:4,
+        }
+      },
   });
 });
 
