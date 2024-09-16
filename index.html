@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="css/style.min.css" />
     </head>
 
-    <body style="background: #888;">
-        <header class="header">
+    <body">
+        <header class="header hidden">
             <div class="container custom-class">
                 <div class="row">
                     <div class="col-lg-2">
@@ -41,7 +41,7 @@
                             <div
                                 class="row justify-content-between align-items-center"
                             >
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 header__del">
                                     <form action="#" class="header__form">
                                         <input
                                             type="search"
@@ -116,7 +116,7 @@
             </div>
         </header>
         <main class="main">
-            <section class="first ">
+            <section class="first hidden">
                 <div class="owl-carousel" id="slider">
                     <div class="first__main-item">
                         <div class="first__image-wrapper">
@@ -141,14 +141,14 @@
                                         <div class="first__subheading">
                                             для грузовых (полу)прицепов
                                         </div>
-                                        <div class="first__btns d-flex">
+                                        <div class="first__btns d-flex flex-wrap">
                                             <button class="button button-first">Оставить заявку</button>
                                             <button class="button" data-anime>Выбрать услугу</button>   
                                         </div>
                                     </div>
                                     <div class="cards">
                                         <div class="row">
-                                            <div class="cards__card col-3">
+                                            <div class="cards__card col-lg-3 col-md-5">
                                                 <div class="cards__number">
                                                     01
                                                 </div>
@@ -164,7 +164,7 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="cards__card col-3"
+                                                class="cards__card col-lg-3 col-md-5"
                                             >
                                                 <div class="cards__number">
                                                     02
@@ -180,7 +180,7 @@
                                                 </div>
                                                 </div>
                                             <div
-                                                class="cards__card col-3"
+                                                class="cards__card col-lg-3 col-md-5"
                                             >
                                                 <div class="cards__number">
                                                     03
@@ -225,14 +225,14 @@
                                         <div class="first__subheading">
                                             Lorem ipsum dolor sit amet.
                                         </div>
-                                        <div class="first__btns d-flex">
+                                        <div class="first__btns d-flex flex-wrap">
                                             <button class="button button-first">Оставить заявку</button>
                                             <button class="button">Lorem, ipsum dolor.</button>   
                                         </div>
                                     </div>
                                     <div class="cards">
                                         <div class="row">
-                                            <div class="cards__card col-3">
+                                            <div class="cards__card col-lg-3 col-md-5">
                                                 <div class="cards__number">
                                                     01
                                                 </div>
@@ -248,7 +248,7 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="cards__card col-3"
+                                                class="cards__card col-lg-3 col-md-5"
                                             >
                                                 <div class="cards__number">
                                                     02
@@ -264,7 +264,7 @@
                                                 </div>
                                                 </div>
                                             <div
-                                                class="cards__card col-3"
+                                                class="cards__card col-lg-3 col-md-5"
                                             >
                                                 <div class="cards__number">
                                                     03
@@ -286,7 +286,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section gradient promotion hidden">
+            <section class="section gradient promotion">
                 <div class="container custom-class">
                     <div class="promotion__wrapper">
                         <div class="heading-big">Товары по акции</div>
