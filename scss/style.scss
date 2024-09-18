@@ -1195,16 +1195,15 @@ a:hover {
     .questions {
         padding: 60px 0;
         .row {
-            row-gap: 35px;
+            row-gap: 40px;
         }
         &__data-wrapper {
             padding: 40px 40px;
         }
         &__form  {
-            height: 280px;
+            height: 250px;
             width: 100%;
-            flex-direction: column;
-            column-gap: 30px;
+            flex-direction: column-reverse;
         }
         &__inner-wrapper {
             height: 110px;
