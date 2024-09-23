@@ -7,12 +7,12 @@ $fw-5: 500;
     content: '';
     display: inline-block;
     height: 3px;
-    width: 46px;
+    width: clamp(40px, 3vw, 46px);
     transform: translateY(-50%);
     border-radius: 20px;
     background: linear-gradient(316deg, #0575e6 1.31%, #021b79 100%);
     box-shadow: 0px 0px 10px $accent-color;
-    margin-right: 10px;
+    margin-right: clamp(5px, 2vw, 10px);
     position: absolute;
     top: 50%;
     left: 0;
@@ -77,9 +77,9 @@ a:hover {
 .heading-small {
     color: $stroke;
     font-weight: $fw-5;
-    font-size: 18px;
+    font-size: clamp(14px, 2vw, 18px);
     line-height: 1.4;
-    padding-left: 70px;
+    padding-left: clamp(60px, 3vw, 70px);
     margin-bottom: 27px;
     position: relative;
     &:before {
@@ -91,8 +91,8 @@ a:hover {
     font-weight: $fw-5;
     font-size: clamp(20px, 2.2vw, 36px);
     line-height: 1.4;
-    padding-left: 70px;
-    margin-bottom: 60px;
+    padding-left: clamp(60px, 3vw, 70px);
+    margin-bottom: clamp(40px, 3vw, 60px);
     position: relative;
     &:before {
         @include before;
@@ -119,7 +119,7 @@ a:hover {
     }
 }
 
-//+ cads:
+//+ cards:
 .cards {
     .row {
         gap: 40px;
@@ -177,7 +177,8 @@ a:hover {
     &__data {
         color: $light-color;
         font-weight: 700;
-        font-size: 50px;
+        font-size: clamp(30px, 3vw, 50px);
+        overflow: hidden;
         &:after {
             content: '';
             height: 2px;
@@ -216,7 +217,7 @@ a:hover {
         }
         &__number {
             font-weight: 600;
-            font-size: 70px;
+            font-size: clamp(50px, 3vw, 70px);
         }
         &__data {
             font-size: 35px;
@@ -226,16 +227,24 @@ a:hover {
         }
     }
 }
-@media (max-width: 992px) {
+@media (max-width: 991px) {
     .cards {
         &__card:nth-child(3):after {
             content: '';
             display: none;
         }
+        &__wrapper {
+            padding: 50px 43px 15px 20px;
+        }
     }
 }
 @media (max-width: 767px) {
-
+    .cards .row {
+        gap: 25px;
+    }
+    .cards__text {
+        font-size: 14px;
+    }
 }
 @media (max-width: 575px) {
     .cards__card {
@@ -246,6 +255,9 @@ a:hover {
                 display: none;
             }
         }
+    }
+    .cards__wrapper {
+        padding-top: 40px;
     }
 }
 .anime {
@@ -301,7 +313,7 @@ a:hover {
         min-height: calc(390px + 22px);
         transition: .5s;
     }
-    &__btm {
+    &__btn {
         height: 54px;
         width: 200px;
         display: flex;
@@ -317,13 +329,13 @@ a:hover {
         transform: translateX(-50%);
         left: 50%;
     }
-    &:hover > &__btm {
+    &:hover > &__btn {
         opacity: 1;
-        transition: .7s;
+        transition: .4s;
         &:hover {
             border: 1.5px solid #012bbf;
             background-color: #ffffff;
-            transition: .8s;
+            transition: .4s;
         }
     }
     &__promotion {
@@ -381,9 +393,13 @@ a:hover {
         min-height: 250px;
         width: 300px;
         padding: 25px 10px;
-        &__btm {
+        &:hover {
+            min-height: calc(390px + 10px);
+        }
+        &__btn {
             height: 50px;
             width: 180px;
+            transform: translateX(-55%);
         }
         &__promotion {
             padding: 5px 35px;
@@ -409,8 +425,17 @@ a:hover {
             font-size: 16px;
         }
     }
-    #promotionSlider .owl-item {
-        width: fit-content !important;
+    // #promotionSlider .owl-item {
+    //     width: fit-content !important;
+    // }
+}
+@media (max-width: 1325px) {
+    .product-card {
+        &__btn {
+            height: 50px;
+            width: 180px;
+            transform: translateX(-50%);
+        }
     }
 }
 @media (max-width: 1259px) {
@@ -418,19 +443,56 @@ a:hover {
         min-height: 250px;
         width: 270px;
         padding: 25px 10px;
-        &__btm {
+        &__btn {
             height: 50px;
             width: 180px;
+            transform: translateX(-58%);
         }
         &__promotion {
             padding: 5px 35px;
         }
-        &__link {
-            font-size: 14px;
+    }
+}
+@media (max-width: 1240px) {
+    .product-card {
+        &__btn {
+            transform: translateX(-57%);
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .product-card {
+        min-height: 350px;
+        width: 300px;
+        &:hover {
+            min-height: calc(390px + 10px);
+            transition: .5s;
+        }
+        &__btn {
+            height: 45px;
+            width: 170px;
+            transform: translateX(-50%);
+        }
+    }
+}
+@media (max-width: 991px) {
+    .product-card {
+        min-height: 340px;
+        width: 330px;
+        padding: 20px 15px;
+        &:hover {
+            min-height: 360px;
+        }
+        &__btn {
+            height: 50px;
+            width: 170px;
+        }
+        &__promotion {
+            padding: 5px 30px;
         }
         &__image-wrapper {
-            height: 214px;
-            max-width: 326px;
+            height: 180px;
+            max-width: 300px;
         }
         &__description {
             font-size: 14px;
@@ -451,8 +513,10 @@ a:hover {
     .product-card {
         min-height: 200px;
         width: 250px;
-        padding: 25px 10px;
-        &__btm {
+        &:hover {
+            min-height: calc(390px - 5px);
+        }
+        &__btn {
             height: 50px;
             width: 180px;
         }
@@ -483,69 +547,87 @@ a:hover {
 }
 @media (max-width: 575px) {
     .product-card {
-        min-height: 250px;
-        width: 270px;
-        padding: 25px 10px;
-        &__btm {
-            height: 50px;
-            width: 180px;
+        min-height: 340px;
+        width: 330px;
+        padding: 20px 15px;
+        &:hover {
+            min-height: calc(390px - 5px);
         }
-        &__promotion {
-            padding: 5px 35px;
+        &__btn {
+            transform: translateX(-101%);
         }
-        &__link {
-            font-size: 14px;
+    }
+}
+@media (max-width: 520px) {
+    .product-card {
+        min-height: 340px;
+        width: 330px;
+        padding: 20px 15px;
+        &:hover {
+            min-height: calc(390px + 10px);
         }
-        &__image-wrapper {
-            height: 214px;
-            max-width: 326px;
+        &__btn {
+            transform: translateX(-95%);
         }
-        &__description {
-            font-size: 14px;
-            line-height: 1.4;
-            padding-top: 18px;
-            padding-bottom: 11px;
-            margin-bottom: 11px;
+    }
+}
+@media (max-width: 495px) {
+    .product-card {
+        &__btn {
+            transform: translateX(-90%);
         }
-        &__price {
-            font-size: 21px;
+    }
+}
+@media (max-width: 475px) {
+    .product-card {
+        &__btn {
+            transform: translateX(-85%);
         }
-        &__discount {
-            font-size: 16px;
+    }
+}
+@media (max-width: 465px) {
+    .product-card {
+        &__btn {
+            transform: translateX(-80%);
+        }
+    }
+}
+@media (max-width: 435px) {
+    .product-card {
+        &__btn {
+            transform: translateX(-75%);
+        }
+    }
+}
+@media (max-width: 415px) {
+    .product-card {
+        &__btn {
+            transform: translateX(-70%);
+        }
+    }
+}
+@media (max-width: 400px) {
+    .product-card {
+        &__btn {
+            transform: translateX(-60%);
         }
     }
 }
 @media (max-width: 360px) {
     .product-card {
         min-height: 200px;
-        width: 250px;
+        width: 290px;
         padding: 25px 10px;
-        &__btm {
+        &:hover {
+            min-height: calc(390px - 1px);
+        }
+        &__btn {
             height: 50px;
             width: 180px;
+            transform: translateX(-50%);
         }
         &__promotion {
             padding: 2px 20px;
-        }
-        &__link {
-            font-size: 14px;
-        }
-        &__image-wrapper {
-            height: 200px;
-            max-width: 314px;
-        }
-        &__description {
-            font-size: 14px;
-            line-height: 1.4;
-            padding-top: 18px;
-            padding-bottom: 11px;
-            margin-bottom: 11px;
-        }
-        &__price {
-            font-size: 21px;
-        }
-        &__discount {
-            font-size: 16px;
         }
     }
 }
@@ -553,6 +635,26 @@ a:hover {
 //+ sections:
 .section {
     padding: 120px 0;
+}
+@media (max-width: 1259px) {
+    .section {
+        padding: 100px 0 0 0;
+    }
+}
+@media (max-width: 1199px) {
+    .section {
+        padding-top: 80px;
+    }
+}
+@media (max-width: 991px) {
+    .section {
+        padding-top: 60px;
+    }
+}
+@media (max-width: 767px) {
+    .section {
+        padding-top: 50px;
+    }
 }
 .gradient {
     position: relative;
@@ -569,7 +671,6 @@ a:hover {
         z-index: -1;
     }
 }
-
 
 //+ header:
 .bg-blure {
@@ -889,7 +990,7 @@ a:hover {
         font-weight: $fw-5;
         font-size: clamp(20px, 2.5vw, 50px);
         line-height: 1.4;
-        margin-bottom: 50px;
+        margin-bottom: clamp(20px, 2.5vw, 50px);
     }
     .button-first {
         font-weight: 600;
@@ -930,6 +1031,12 @@ a:hover {
         &__wrapper {
             padding-top: 100px;
         }
+        &__offer {
+            margin-bottom: 47px;
+        }
+        .button {
+            padding: 15px 25px !important;
+        }
     }
 }
 @media (max-width: 767px) {
@@ -955,7 +1062,7 @@ a:hover {
 
 //+ promotion:
 .promotion {
-    min-height: 804px;
+    min-height: 810px;
     height: 100%;
     &__wrapper{
         position: relative;
@@ -967,17 +1074,26 @@ a:hover {
     .owl-stage-outer {
         overflow: unset;
     }
-    &__nav-prev,
-    &__nav-next {
-        height: 64px;
-        width: 21px;
-        background: url(../img/svg/arrow-left.svg) center center /cover no-repeat;
+    &__nav-wrapp {
+        height: 75px;
+        width: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
         position: absolute;
         top: 50%;
-    }
-    &__nav-prev {
         left: -50px;
+        &:last-child {
+            left: auto;
+            right: -34px;
+        }
+    }
+    &__nav-prev,
+    &__nav-next {
+        height: 64px;
+        width: 22px;
+        background: url(../img/svg/arrow-left.svg) center center /cover no-repeat;
     }
     &__nav-next {
         transform: rotate(180deg);
@@ -986,18 +1102,39 @@ a:hover {
 }
 @media (max-width: 1549px) {
     .promotion {
-        &__nav-prev {
+        &__nav-wrapp {
             background-color: #0000005e;
             backdrop-filter: blur(4px);
+            border-radius: 10px;
             left: 10px;
             z-index: 10;
+            &:last-child {
+                left: auto;
+                right: 10px;
+            }
         }
-        &__nav-next {
-            background-color: #0000005e;
-            backdrop-filter: blur(4px);
-            transform: rotate(180deg);
-            right: 10px;
-            z-index: 10;
+    }
+}
+@media (max-width: 1259px) {
+    .promotion {
+        min-height: 680px;
+    }
+}
+@media (max-width: 1199px) {
+    .promotion {
+        min-height: 650px;
+    }
+}
+@media (max-width: 991px) {
+    .promotion {
+        min-height: 580px;
+    }
+}
+@media (max-width: 575px) {
+    .promotion {
+        .owl-item {
+            display: flex;
+            justify-content: center;
         }
     }
 }
@@ -1033,56 +1170,50 @@ a:hover {
     .heading-big {
         margin-bottom: 30px;
     }
-    &__text {
-        
-        color: $light-color;
-        font-size: 20px;
-        line-height: 1.5;
-    }
     &__form {
         height: 100%;
         max-width: 600px;
+        flex-wrap: wrap;
         justify-content: space-between;
-    }
-    &__text-up {
-        color: $light-color;
-        text-transform: capitalize;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 1.5;
-    }
-    &__inner-wrapper {
-        width: 250px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        row-gap: 37px;
     }
     &__wrap {
+        width: 250px;
         position: relative;
-    }
-    &__text-up {
-        display: block;
-        position: absolute;
-        left: 10px;
-        top: 1.8px;
-        padding: 0 4px;
-        font-size: 14px;
-        transition: all .15s ease-out;
+        top: 0;
     }
     &__input {
+        width: 100%;
+        display: block;
         color: $light-color;
         background: transparent;
         border: none;
         border-bottom: 1px solid #ececec;
-        position: absolute;
-        top: 0;
-        left: 0;
         &:focus, &:target{
             background: none;
             border: 0 ;
             outline: 0;
             border-bottom: 1px solid #ececec;
         }
+    }
+    &__text {
+        color: $light-color;
+        font-size: 20px;
+        line-height: 1.5;
+    }
+    &__text-up {
+        display: block;
+        color: $light-color;
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        transition: all .15s ease-out;
+        position: absolute;
+        left: 10px;
+        top: 1.8px;
+        padding: 0 4px;
+        font-size: 14px;
     }
     .questions__input:focus + .questions__text-up {
         top: -20px;
@@ -1094,7 +1225,10 @@ a:hover {
     }
     &__btn {
         max-width: 200px;
-        padding: 16px 57px;
+        padding: 5px 57px;
+    }
+    &__checkbox-wrapper {
+        width: 250px;
     }
     &__checkbox {
         opacity: 0;
@@ -1252,7 +1386,7 @@ a:hover {
     &__text {
         color: $stroke;
         font-weight: 400;
-        font-size: 16px;
+        font-size: clamp(12px, 2vw, 16px);
         line-height: 1.5;
     }
     &__text + &__text {
@@ -1296,9 +1430,6 @@ a:hover {
             }
             grid-auto-rows: 1fr;
         }
-        &__text {
-            font-size: 14px;
-        }
         &__text + &__text {
             margin-top: 20px;
         }
@@ -1321,6 +1452,7 @@ a:hover {
 //+ map:
 .map {
     position: relative;
+    background: #181a16;
     &__iframe {
         position: absolute;
         top: 0;
@@ -1332,7 +1464,7 @@ a:hover {
         background: #181a16;
         padding: 70px 60px;
         color: $light-color;
-        font-size: 16px;
+        font-size: clamp(14px, 2vw, 16px);
         line-height: 1.5;
         position: relative;
         top: 0;
@@ -1369,6 +1501,9 @@ a:hover {
         position: relative;
         top: 0;
         left: 36px;
+    }
+    &__text {
+        font-size: clamp(12px, 2vw, 14px);
     }
     &__address:before {
         content: "";
@@ -1498,7 +1633,6 @@ a:hover {
         display: block;
     }
 }
-
 @media (min-width: 1200px) {
     .container {
         max-width: 1400px;
