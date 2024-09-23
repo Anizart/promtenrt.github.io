@@ -17,6 +17,10 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="css/owl.carousel.min.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+        />
         <link rel="stylesheet" href="css/icon.min.css" />
         <link rel="stylesheet" href="css/style.min.css" />
     </head>
@@ -304,7 +308,7 @@
                                     <div class="product-card__current-price">4500</div>
                                     <div class="product-card__discount">5400 ₽</div>
                                 </div>
-                                <a href="#" class="product-card__btm">В корзину</a>
+                                <a href="#" class="product-card__btn">В корзину</a>
                             </div>
                             <div class="promotion__product-card product-card d-flex">
                                 <div class="product-card__wrapper d-flex justify-content-between">
@@ -319,7 +323,7 @@
                                     <div class="product-card__current-price">4500</div>
                                     <div class="product-card__discount">5400 ₽</div>
                                 </div>
-                                <a href="#" class="product-card__btm">В корзину</a>
+                                <a href="#" class="product-card__btn">В корзину</a>
                             </div>
                             <div class="promotion__product-card product-card d-flex">
                                 <div class="product-card__wrapper d-flex justify-content-between">
@@ -334,7 +338,7 @@
                                     <div class="product-card__current-price">4500</div>
                                     <div class="product-card__discount">5400 ₽</div>
                                 </div>
-                                <a href="#" class="product-card__btm">В корзину</a>
+                                <a href="#" class="product-card__btn">В корзину</a>
                             </div>
                             <div class="promotion__product-card product-card d-flex">
                                 <div class="product-card__wrapper d-flex justify-content-between">
@@ -349,7 +353,7 @@
                                     <div class="product-card__current-price">4500</div>
                                     <div class="product-card__discount">5400 ₽</div>
                                 </div>
-                                <a href="#" class="product-card__btm">В корзину</a>
+                                <a href="#" class="product-card__btn">В корзину</a>
                             </div>
                             <div class="promotion__product-card product-card d-flex">
                                 <div class="product-card__wrapper d-flex justify-content-between">
@@ -364,11 +368,15 @@
                                     <div class="product-card__current-price">4500</div>
                                     <div class="product-card__discount">5400 ₽</div>
                                 </div>
-                                <a href="#" class="product-card__btm">В корзину</a>
+                                <a href="#" class="product-card__btn">В корзину</a>
                             </div>
                         </div>
-                        <div class="promotion__nav-prev"></div>
-                        <div class="promotion__nav-next"></div>
+                        <div class="promotion__nav-wrapp">
+                            <div class="promotion__nav-prev"></div>
+                        </div>
+                        <div class="promotion__nav-wrapp">
+                            <div class="promotion__nav-next"></div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -386,26 +394,25 @@
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <form action="#" method="post" class="questions__form d-flex justify-content-beetwin">
-                                    <div class="questions__inner-wrapper">
-                                        <div class="questions__wrap">
-                                            <input id="user-name" type="text" class="questions__input" placeholder=" " tabindex="1">
-                                            <label for="user-name" class="questions__text-up">Имя</label>
-                                        </div>
-                                        <button type="submit" class="button questions__btn" tabindex="4">Отправить</button>
+                                <form action="#" method="post" class="questions__form d-flex">
+
+                                    <div class="questions__wrap">
+                                        <input id="user-name" type="text" class="questions__input" placeholder=" " tabindex="1">
+                                        <label for="user-name" class="questions__text-up">Имя</label>
                                     </div>
-                                    <div class="questions__inner-wrapper">
-                                        <div class="questions__wrap">
-                                            <input id="user-tel" type="tel" class="questions__input" placeholder=" " tabindex="2">
-                                            <label for="user-tel" class="questions__text-up">телефон</label>
-                                        </div>
-                                        <div class="questions__checkbox-wrapper d-flex">
-                                            <input type="checkbox" id="checkbox-politics" class="questions__checkbox" name="checkbox" value="yes" tabindex="3">
-                                            <label for="checkbox-politics" class="questions__checkbox-text">
-                                                Согласие с политикой конфиденциальности сайта
-                                            </label>
-                                        </div>
+                                    <div class="questions__wrap">
+                                        <input id="user-tel" type="tel" class="questions__input" placeholder=" " tabindex="2">
+                                        <label for="user-tel" class="questions__text-up">телефон</label>
                                     </div>
+
+                                    <button type="submit" class="button questions__btn" tabindex="4">Отправить</button>
+                                    <div class="questions__checkbox-wrapper d-flex">
+                                        <input type="checkbox" id="checkbox-politics" class="questions__checkbox" name="checkbox" value="yes" tabindex="3">
+                                        <label for="checkbox-politics" class="questions__checkbox-text">
+                                            Согласие с политикой конфиденциальности сайта
+                                        </label>
+                                    </div>
+
                                 </form>
                             </div>
                         </div>
@@ -416,19 +423,19 @@
                 <div class="container custom-class">
                     <div class="heading-big">Наши работы</div>
                     <div class="work__wrapper">
-                        <div class="work__imege-wrapper">
+                        <div class="work__imege-wrapper" data-fancybox="gallery" data-src="img/cell-1.webp">
                             <img src="img/cell-1.webp" alt="промтент" class="work__img">
                         </div>
-                        <div class="work__imege-wrapper">
+                        <div class="work__imege-wrapper" data-fancybox="gallery" data-src="img/cell-2.webp">
                             <img src="img/cell-2.webp" alt="промтент" class="work__img">
                         </div>
-                        <div class="work__imege-wrapper">
+                        <div class="work__imege-wrapper" data-fancybox="gallery" data-src="img/cell-3.webp">
                             <img src="img/cell-3.webp" alt="промтент" class="work__img">
                         </div>
-                        <div class="work__imege-wrapper">
+                        <div class="work__imege-wrapper" data-fancybox="gallery" data-src="img/cell-4.webp">
                             <img src="img/cell-4.webp" alt="промтент" class="work__img">
                         </div>
-                        <div class="work__imege-wrapper">
+                        <div class="work__imege-wrapper" data-fancybox="gallery" data-src="img/cell-5.webp">
                             <img src="img/cell-5.webp" alt="промтент" class="work__img">
                         </div>
                     </div>
@@ -438,7 +445,7 @@
             </section>
             <section class="map">
                 <div class="container custom-class">
-                    <div class="col-sm-5 col-xl-5 map__contacts">
+                    <div class="col-lg-5 map__contacts">
                         <div class="heading-big">Контакты</div>
                         <div class="map__wrapper-contact">
                             <div class="map__address-wrapper">
@@ -483,6 +490,7 @@
         </main>
         <script defer src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script defer src="js/owl.carousel.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
         <script defer src="js/script.js"></script>
     </body>
 </html>
