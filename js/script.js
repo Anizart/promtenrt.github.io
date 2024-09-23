@@ -21,22 +21,19 @@ $(document).ready(function(){
       responsive: {
         0:{
           items:1,
-          center: true,
+          center:true,
         },
         576:{
           items:2,
-          center: true,
         },
         768:{
           items:2,
-          center: true,
         },
         992:{
           items:3,
-          center: true,
         },
         1200:{
-          items:3,
+          items:4,
         },
         1400:{
           items:4,
@@ -54,6 +51,11 @@ $('.promotion__nav-prev').click(function() {
 
 $('.promotion__nav-next').click(function() {
   owl.trigger('next.owl.carousel', [580]);
+});
+
+//+ Fancybox:
+Fancybox.bind("[data-fancybox]", {
+  // Your custom options
 });
 
 //+ header:
